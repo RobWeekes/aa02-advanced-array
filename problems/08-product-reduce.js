@@ -15,26 +15,6 @@ console.log(productWithReduce([4, 3])); // 12
 
 */
 
-let productWithReduce = function(nums) {
-    let math = nums.reduce(
-        (acc, current) => {
-        acc = current * acc;
-        return acc;
-        })
-        return math;
-}
-
-// let productWithReduce = function(nums) {
-//     const productNums = nums.reduce((acc,current) => { acc = current * acc;
-//     return acc;})
-//     return productNums;
-// }
-
-
-console.log(productWithReduce([10, 3, 5, 2])); // 300
-console.log(productWithReduce([4, 3])); // 12
-
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
