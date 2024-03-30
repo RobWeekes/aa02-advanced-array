@@ -26,8 +26,34 @@ console.log(chooseyEndings(17, 'ily'));
 */
 
 let chooseyEndings = function(words, suffix) {
-  // Your code here 
+  let arr = [];
+  if(Array.isArray(words) == false)  return [];
+  arr = words.filter((word) => word.endsWith(suffix) )
+  console.log(arr);
+  return arr;
 };
+
+// let longWords = function(words) {
+//   let arr = [];
+//   arr = words.filter((word) => word.length > 5 )
+//   return arr;
+// };
+
+console.log(chooseyEndings(['family', 'hound', 'catalyst', 'fly', 'timidly', 'bond'], 'ly'));
+// [ 'family', 'fly', 'timidly' ]
+
+console.log(chooseyEndings(['family', 'hound', 'catalyst', 'fly', 'timidly', 'bond'], 'nd'));
+// [ 'hound', 'bond' ]
+
+console.log(chooseyEndings(['simplicity', 'computer', 'felicity'], 'icity'));
+// [ 'simplicity', 'felicity' ]
+
+console.log(chooseyEndings(['simplicity', 'computer', 'felicity'], 'ily'));
+// [ ]
+
+console.log(chooseyEndings(17, 'ily'));
+// [ ]
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
