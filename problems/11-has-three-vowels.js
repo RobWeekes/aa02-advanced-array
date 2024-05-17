@@ -16,11 +16,52 @@ console.log(hasThreeVowels('go home'));         //  false
 
 */
 
+// let vowelObj = {
+//     a: 0, e: 1, i: 2, o: 3, u: 4
+// }
+// let vowelArr = ['a', 'e', 'i', 'o', 'u'];
+
+const vowels = 'aeiou';
+
+// helper func to identify vowels
+const vowelIndex = vowel => {
+    if(vowel === 'a') return 0;
+    if(vowel === 'e') return 1;
+    if(vowel === 'i') return 2;
+    if(vowel === 'o') return 3;
+    if(vowel === 'u') return 4;
+}
+
 let hasThreeVowels = function(string) {
-    // Your code here 
+    let uniqueCount = 0;
+    let vowelCount = [0, 0, 0, 0, 0];
+    let stringArr = string.split('');
+
+    stringArr.forEach((ltr) => {
+        if(vowels.includes(ltr)) {
+            let index = vowelIndex(ltr);
+            console.log(index)
+            vowelCount[index] += 1;         // populate array with each vowel count
+            console.log(vowelCount);
+        }
+    })
+
+    // count unique vowels
+    vowelCount.forEach((num) => {
+        if(num !== 0) uniqueCount++;
+        console.log(uniqueCount);
+    })
+
+    if(uniqueCount >= 3) return true;
+    return false;
 };
 
-// Your code here 
+console.log(hasThreeVowels('delicious'));       //  true
+console.log(hasThreeVowels('bootcamp prep'));   //  true
+console.log(hasThreeVowels('bootcamp'));        //  false
+console.log(hasThreeVowels('dog'));             //  false
+console.log(hasThreeVowels('go home'));         //  false
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

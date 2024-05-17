@@ -16,8 +16,34 @@ console.log(snakeToCamel('APp_ACADEMY_iS_cOol')); // 'AppAcademyIsCool'
 */
 
 function snakeToCamel(str) {
-    // Your code here 
+    let words = str.split('_');
+    console.log(words);
+
+    const map1 = words.map((word) => {
+        let newWord = [];
+        for(let i = 0; i < word.length; i++) {
+            let first = word[0];
+            let char = word[i];
+
+            if(i === 0) {
+                newWord.push(char.toUpperCase());
+            } else {
+                newWord.push(char.toLowerCase());
+            }
+            console.log(newWord);
+        }
+        return newWord.join('');
+    });
+    console.log(map1);
+    return map1.join('');
 }
+
+
+console.log(snakeToCamel('snakes_go_hiss')); // 'SnakesGoHiss'
+console.log(snakeToCamel('say_hello_world')); // 'SayHelloWorld'
+console.log(snakeToCamel('app_academy_is_cool')); // 'AppAcademyIsCool'
+console.log(snakeToCamel('APp_ACADEMY_iS_cOol')); // 'AppAcademyIsCool'
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

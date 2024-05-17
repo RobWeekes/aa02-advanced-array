@@ -14,8 +14,8 @@ console.log(longWords(['couscous', 'soup', 'ceviche', 'solyanka' ,'taco'])); // 
 */
 
 let longWords = function(words) {
-  let arr = [];
-  arr = words.filter((word) => word.length > 5 )
+  // let arr = [];
+  let arr = words.filter((word) => word.length > 5 )
   return arr;
 };
 console.log(longWords(['bike', 'skateboard','scooter', 'moped'])); // [ 'skateboard', 'scooter' ]
