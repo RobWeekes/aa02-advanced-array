@@ -28,14 +28,46 @@ console.log(repeatingTranslate("her family flew to France"));   // "herer family
 
 */
 
-let repeatingTranslate = function(sentence) {
-    // Your code here 
-};
-
+const vowels = 'aeiouAEIOU';
 
 let translateWord = function(word) {
-    // Your code here 
+
+    // words that are shorter than 3 characters are unchanged
+    if(word.length < 3) return word;
+
+    for(let i = word.length - 1; i >= 0; i--) {
+        let last = word[word.length - 1];
+        console.log(last)
+        let char = word[i];
+        console.log(char);
+
+        if(vowels.includes(last)) {
+            return word + word;
+        }
+        if(vowels.includes(char)) {
+            return word + word.slice(i);
+        }
+    }
 };
+
+let repeatingTranslate = function(sentence) {
+    let words = sentence.split(' ');
+    console.log(words);
+
+    let translation = words.map(translateWord);
+    return translation.join(' ');
+};
+
+console.log(translateWord('like'));
+console.log(translateWord('cannot'));
+
+console.log(repeatingTranslate("we like to go running fast"));  // "we likelike to go runninging fastast"
+console.log(repeatingTranslate("he cannot find the trash"));    // "he cannotot findind thethe trashash"
+console.log(repeatingTranslate("pasta is my favorite dish"));   // "pastapasta is my favoritefavorite dishish"
+console.log(repeatingTranslate("her family flew to France"));   // "herer familyily flewew to FranceFrance"
+
+console.log(repeatingTranslate("Let's go to the store"));
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
